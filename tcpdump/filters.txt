@@ -1,1 +1,14 @@
+# Установка утилиты
+sudo apt install tcpdump
 
+# Просмотр всех доступных сетевых интерфейсов
+tcpdump -D
+
+# Перехват ARP-пакетов на интерфейсе eth0
+sudo tcpdump -i eth0 arp
+
+# Перехват ICMP-пакетов (например, при выполнении ping 8.8.8.8)
+sudo tcpdump -i eth0 icmp
+
+# Перехват TCP-пакетов (например, при выполнении curl http://...)
+sudo tcpdump -i eth0 tcp
