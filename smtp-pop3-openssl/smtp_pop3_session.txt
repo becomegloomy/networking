@@ -1,1 +1,38 @@
+# Пример сессии через OpenSSL
 
+# Подключение к SMTP-серверу
+openssl s_client -connect smtp.gmail.com:465 -quiet
+
+# Представление серверу
+helo domain.local
+
+# Начало аутентификации
+auth login
+
+# Отправка письма
+MAIL FROM:<sofysss2222@gmail.com>
+
+RCPT TO:<sonya.kosmos69@mail.ru>
+
+DATA
+
+# Завершение сессии
+QUIT
+
+
+# POP3 (получение почты, порт 995)
+
+openssl s_client -connect pop.gmail.com:995 -quiet
+
+# Авторизация
+USER sofy...
+PASS [пароль]
+
+# Просмотр списка писем
+LIST
+
+# Запрос содержимого 6-го письма 
+RETR 6
+
+# Завершение сессии
+QUIT
